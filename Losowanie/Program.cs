@@ -40,7 +40,7 @@ for (int i = 0; i < osobyLosujace.Count; i++)
     {
         randomIndex = new Random().Next(0, osobyLosowane.Count - 1);
     }
-    while (osobyLosowane[randomIndex].Id != osobyLosujace[i].Id);
+    while (osobyLosowane[randomIndex].Id == osobyLosujace[i].Id);
     Console.WriteLine("{0} wylosował/a {1}", osobyLosujace[i].Name, osobyLosowane[randomIndex].Name);
     osobyLosowane.RemoveAt(randomIndex);
 }
