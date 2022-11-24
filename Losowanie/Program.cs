@@ -49,7 +49,7 @@ var userInput = Console.ReadLine();
 
 if (NameToName.ContainsKey(userInput))
 {
-    Console.WriteLine();
+    Console.WriteLine(();
 }
 else
 {
