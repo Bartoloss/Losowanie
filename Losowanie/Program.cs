@@ -24,7 +24,6 @@ for (int i = 0; i < osobyLosujace.Count; i++)
         osobyDoWylosowania.Remove(imie);
         randomIndex = new Random().Next(0, osobyDoWylosowania.Count);
         string imie2 = osobyDoWylosowania[randomIndex];
-        //Console.WriteLine("{0} wylosował/a {1}", imie, imie2);
         NameToName.Add(imie, imie2);
         osobyDoWylosowania.Add(imie);
         osobyDoWylosowania.Remove(imie2);
@@ -34,7 +33,6 @@ for (int i = 0; i < osobyLosujace.Count; i++)
     {
         randomIndex = new Random().Next(0, osobyDoWylosowania.Count);
         string imie2 = osobyDoWylosowania[randomIndex];
-        //Console.WriteLine("{0} wylosował/a {1}", imie, imie2);
         NameToName.Add(imie, imie2);
         osobyDoWylosowania.Remove(imie2);
     }
