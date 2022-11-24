@@ -42,16 +42,32 @@ for (int i = 0; i < osobyLosujace.Count; i++)
 }
 
 Console.WriteLine("Welcome to the people draw app!");
-Console.WriteLine("Please write your name starting with a capital letter:");
 
-var userInput = Console.ReadLine();
-
-
-if (NameToName.ContainsKey(userInput))
+do
 {
-    Console.WriteLine(();
+    Console.WriteLine("Please write your name starting with a capital letter:");
+    var userInput = Console.ReadLine();
+
+    if (NameToName.ContainsKey(userInput))
+    {
+        NameToName.TryGetValue(userInput, out string drawnPerson);
+        Console.ForegroundColor = ConsoleColor.Green;
+        Console.WriteLine("{0} wylosował/a {1}", userInput, drawnPerson);
+        Console.ForegroundColor = ConsoleColor.White;
+        NameToName.Remove(userInput);
+        Console.WriteLine("Please press any key and enter to delete");
+        string deleteOption = Console.ReadLine();
+        if (!string.IsNullOrEmpty(deleteOption))
+        {
+            Console.Clear();
+        }
+
+    }
+    else
+    {
+        Console.ForegroundColor = ConsoleColor.Red;
+        Console.WriteLine("Error! Please write your name again WITH A CAPITAL LETTER:");
+        Console.ForegroundColor = ConsoleColor.White;
+    }
 }
-else
-{
-    Console.WriteLine("Error! Please write your name again:");
-}
+while (NameToName.Count != 0);
